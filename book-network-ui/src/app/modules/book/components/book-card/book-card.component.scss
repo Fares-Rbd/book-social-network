@@ -1,0 +1,17 @@
+div {
+  &.card {
+    max-height: 600px;
+    min-height: 600px;
+    margin-left: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+
+    &:hover {
+      transform: scale(1.05); /* Slightly scale up the card */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    }
+  }
+}
+
+i {
+  cursor: pointer;
+}
