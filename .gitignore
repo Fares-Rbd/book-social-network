@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Node Modules
+node_modules/
+
+# Production
+book-network-ui/dist/
+book-network-ui/build/
+
+# Dependency directories
+book-network-ui/node_modules/
+book-network/target/
+
+# Misc
+.DS_Store
+.env
+
+# IDE specific files
+.idea/
+*.iml
+
+# Java specific files
+*.class
+*.jar
+*.war
+*.ear
