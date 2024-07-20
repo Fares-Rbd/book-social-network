@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_social_network
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+          ddl-auto: update
+    show-sql: true
+    properties:
+          hibernate:
+            format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost #when deploying we only need to change the host, port, username and password
+    port: 1025
+    username: fares
+    password : fares
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls: #extra security level
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # Expires in 1 day (in milliseconds)
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+  file:
+    upload:
+      photos:
+        photos-output-path : ./uploads
