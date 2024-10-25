@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {TokenService} from "../../../../services/token/token.service";
+import KeycloakService from "../../../../services/keycloak/keycloak.service";
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,8 @@ import {TokenService} from "../../../../services/token/token.service";
 })
 export class MenuComponent implements OnInit {
   constructor(private router: Router,
-              private tokenService: TokenService) {
+              private tokenService: TokenService,
+              private keycloakService: KeycloakService) {
   }
 
   ngOnInit(): void {
@@ -26,9 +28,8 @@ export class MenuComponent implements OnInit {
   }
 
 
-  logout() {
-    localStorage.removeItem('token');
-    window.location.reload();
+  async logout() {
+    await this.keycloakService.logout()
   }
 
   getUsernameFromToken() {
